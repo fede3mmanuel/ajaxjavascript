@@ -1,9 +1,14 @@
-var myCat = {
-    "name": "Meowsalot",
-    "species": "cat",
-    "favFood": "tuna"
-}
+var thePets = [
+    {
+        "name": "Meowsalot",
+        "species": "cat",
+        "favFood": "tuna"
+    },
+    {
+        "name": "Barky",
+        "species": "dog",
+        "favFood": "carrots"
+    }
+]
 
-var myFavColors = ["blue", "green", "purple"];
-
-myFavColors[1]
+thePets[1].favFood
