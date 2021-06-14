@@ -19,5 +19,6 @@ ourRequest.send();
 });
 
 function renderHTML(data) {
-    animalContainer.insertAdjacentHTML('beforeend', 'testing123')
+    let htmlString = "this is a test";
+    animalContainer.insertAdjacentHTML('beforeend', htmlString)
 }
