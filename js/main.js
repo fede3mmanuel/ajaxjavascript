@@ -1,3 +1,5 @@
+var animalContainer = document.getElementById("animal-info");
+
 var btn = document.getElementById("btn");
 
 btn.addEventListener("click", function() {
@@ -10,8 +12,12 @@ btn.addEventListener("click", function() {
         // let ourData = ourRequest.responseText;
         // With the folowing the browser knows that is a json file
         let ourData = JSON.parse(ourRequest.responseText)
-        console.log(ourData[0]);
+        renderHTML(ourData);
 };
 
 ourRequest.send();
 });
+
+function renderHTML(data) {
+    animalContainer.insertAdjacentHTML('beforeend', 'testing123')
+}
