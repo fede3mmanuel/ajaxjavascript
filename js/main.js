@@ -10,13 +10,25 @@ btn.addEventListener("click", function() {
 
     ourRequest.onload = function () {
     
+        if (ourRequest.status >= 200 && ourRequest.status < 400) {
+            
+            // With the folowing the browser knows that is a json file
+            let ourData = JSON.parse(ourRequest.responseText)
+            renderHTML(ourData);
+
+        } else {
+            console.log("We connected to the server but it returned an error");
+        }
         // console.log(ourRequest.responseText);
         // With the folowing the browser thinks that is text
         // let ourData = ourRequest.responseText;
-        // With the folowing the browser knows that is a json file
-        let ourData = JSON.parse(ourRequest.responseText)
-        renderHTML(ourData);
+        
     
+    };
+
+
+    ourRequest.onerror = () => {
+        console.log("Connection error");
     };
 
     ourRequest.send();
